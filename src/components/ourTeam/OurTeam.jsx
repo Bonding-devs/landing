@@ -8,10 +8,10 @@ import Gabriel_Bursztein from '/team-2.webp';
 const OurTeam = () => {
 
   const ref = useRef()
-  const isInView = useInView(ref, {margin: "-100px"})
+  const isInView = useInView(ref, { margin: "-100px" })
 
   const teamMembers = [
-    { 
+    {
       img: Andres_Haskel,
       name: 'Andres Haskel',
       title: 'CEO',
@@ -19,7 +19,7 @@ const OurTeam = () => {
       twitterLink: 'https://twitter.com/AndresHaskel',
       linkedinLink: 'https://www.linkedin.com/in/andreshaskel/',
     },
-    { 
+    {
       img: Gabriel_Bursztein,
       name: 'Gabriel Bursztein',
       title: 'CTO',
@@ -51,7 +51,7 @@ const OurTeam = () => {
       }
     }
   }
-  
+
   const imageVariants = {
     initial: {
       opacity: 0,
@@ -68,23 +68,23 @@ const OurTeam = () => {
   }
 
   return (
-    <motion.div 
+    <motion.div
       className='ourTeam'
-      ref={ref} 
+      ref={ref}
     >
       <Container>
-        <motion.div 
-          className='title-container text-center' 
+        <motion.div
+          className='title-container text-center'
         >
           <motion.h2>Meet Our Founders</motion.h2>
         </motion.div>
 
-        <motion.div 
-          className="row align-items-center justify-content-center"
+        <motion.div
+          className="row justify-content-center"
         >
           {teamMembers.map((member, item) => (
             <motion.div className="col-12 col-md-6 col-lg-4 text-center mb-4 mb-lg-0" key={item}>
-              <motion.div className='member_card' whileHover={{boxShadow: "2px 8px 24px 0 rgba(1, 17, 50, 0.08)", color: "none"}}>
+              <motion.div className='member_card' whileHover={{ boxShadow: "2px 8px 24px 0 rgba(1, 17, 50, 0.08)", color: "none" }}>
                 <div className='member_img-container'>
                   <motion.img className='img-fluid' src={member.img} alt={member.name} variants={imageVariants} />
                 </div>
@@ -120,8 +120,8 @@ const OurTeam = () => {
 
         <motion.div className='join-container text-center'>
           <h3>Are you ready to join our team?</h3>
-          <motion.a 
-            href="#Contact" 
+          <motion.a
+            href="#Contact"
             className='btn'
           >
             Join Our Team
