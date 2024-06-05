@@ -15,7 +15,7 @@ import './contact.scss';
 const Contact = () => {
 
   const ref = useRef()
-  const isInView = useInView(ref, {margin: '-100px'})
+  const isInView = useInView(ref, { margin: '-100px' })
 
   const textVariants = {
     initial: {
@@ -62,12 +62,12 @@ const Contact = () => {
   const sendEmail = (values, { setSubmitting, resetForm }) => {
     setLoading(true);
     // Send email using emailjs-com
-    emailjs.sendForm('service_s5wjd9q', 'template_t2o7ak8',  '#emailForm', 'YIFMl9ZRCxM-Btmuc')
+    emailjs.sendForm('service_s5wjd9q', 'template_t2o7ak8', '#emailForm', 'YIFMl9ZRCxM-Btmuc')
       .then((response) => {
         console.log('Email sent:', response);
         setSubmitting(false);
         setShowBanner(true);
-        setTimeout(() => setShowBanner(false), 3000); 
+        setTimeout(() => setShowBanner(false), 3000);
         resetForm();
       }, (error) => {
         console.error('There was an error sending the email:', error);
@@ -77,38 +77,38 @@ const Contact = () => {
       });
   };
 
-  
+
   return (
-    <div 
+    <div
       className='contact'
       ref={ref}
     >
       <Container>
         <div className='row align-items-center justify-content-center'>
           <div className='col-12 col-lg-5 mb-4 mb-lg-0'>
-            <motion.div 
+            <motion.div
               className='title-container'
             >
               <h2>Contact Now</h2>
-              <p>I would love to talk to you about your project or needs. Fill in the form or send us an email to <a href='mailto:hello@bonding.dev'>hello@bonding.dev</a></p>
+              <p>We would love to talk to you about your project or needs. Fill in the form or send us an email to <a href='mailto:hello@bonding.dev'>hello@bonding.dev</a></p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className='schedule_a_call-container'
             >
               <h3>Schedule a Call</h3>
               <p>Feel free to select a time at your convenience!</p>
-              <a className='position-relative' 
-              href='https://calendly.com/andres-haskel/introduction-call?back=1&month=2024-05'
-              target='_blank'
+              <a className='position-relative'
+                href='https://calendly.com/andres-haskel/introduction-call?back=1&month=2024-05'
+                target='_blank'
               >Let’s Talk</a>
             </motion.div>
           </div>
           <div className='col-12 col-lg-7'>
-            <motion.div 
+            <motion.div
               className='form_container'
             >
-            {showBanner && <div className="success-banner fade-in-out">Email sent successfully!</div>}
+              {showBanner && <div className="success-banner fade-in-out">Email sent successfully!</div>}
               <Formik
                 validationSchema={schema}
                 onSubmit={sendEmail}
@@ -121,7 +121,7 @@ const Contact = () => {
                 {({ handleSubmit, handleChange, values, touched, errors }) => (
                   <Form noValidate onSubmit={handleSubmit} id="emailForm">
                     <Row className='mb-4'>
-                      <Form.Group as={Col} md='6' controlId='validationFormik01'>
+                      <Form.Group as={Col} md='6' controlId='validationFormik01' className='mb-3'>
                         <Form.Label>Name <span className='asterisk'>*</span></Form.Label>
                         <Form.Control
                           type='text'
@@ -153,7 +153,7 @@ const Contact = () => {
                       </Form.Group>
                     </Row>
                     <Row className='mb-4'>
-                    <Form.Group as={Col} md='12' controlId='validationFormik03'>
+                      <Form.Group as={Col} md='12' controlId='validationFormik03'>
                         <Form.Label>Message <span className='asterisk'>*</span></Form.Label>
                         <Form.Control
                           as='textarea'
@@ -172,7 +172,7 @@ const Contact = () => {
                       </Form.Group>
                     </Row>
                     <Button type='submit'>
-                    {loading ? (
+                      {loading ? (
                         <>
                           <Spinner
                             as="span"

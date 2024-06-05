@@ -25,13 +25,13 @@ const variants = {
 const WhatWeDo = () => {
 
   const ref = useRef()
-  const isInView = useInView(ref, {margin: "-100px"})
+  const isInView = useInView(ref, { margin: "-100px" })
 
   return (
-    <motion.div 
+    <motion.div
       className='whatWeDo text-center'
       ref={ref}
-      initial="initial" 
+      initial="initial"
       animate={isInView && 'animate'}
     >
       <Container>
@@ -42,16 +42,16 @@ const WhatWeDo = () => {
 
         <motion.div className="row" >
           <motion.div className="col-12 col-lg-6 mb-4 mb-lg-0">
-            <motion.div className="service-box"  whileHover={{backgroundColor: "#011132", color: "#ffffff"}}>
+            <motion.div className="service-box" whileHover={{ backgroundColor: "#011132", color: "#ffffff" }}>
               <div className="img-container">
                 <img className='first-img' src={Computer} alt="" />
               </div>
               <h3>Full Product Development</h3>
-              <p>Covers everything from concept to launch. We provide end-to-end development services covering everything from UX/UI design, web and mobile development, infrastructure setup, QA testing, and ongoing maintenance.</p>
+              <p>Our end-to-end development services cover every aspect from concept to launch, including UX/UI design, web and mobile development, infrastructure setup, QA testing, and ongoing maintenance.</p>
             </motion.div>
           </motion.div>
           <motion.div className="col-12 col-lg-6">
-            <motion.div className="service-box"  whileHover={{backgroundColor: "#011132", color: "#ffffff"}}>
+            <motion.div className="service-box" whileHover={{ backgroundColor: "#011132", color: "#ffffff" }}>
               <div className="img-container">
                 <img className='second-img' src={IdCard} alt="" />
               </div>
